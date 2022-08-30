@@ -25,12 +25,12 @@
                     <x-jet-nav-link href="{{ route('admin-medios') }}" :active="request()->routeIs('admin-medios')">
                         {{ __('Medios') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('cumpleanios-board') }}" :active="request()->routeIs('cumpleanios-board')">
+                    {{-- <x-jet-nav-link href="{{ route('cumpleanios-board') }}" :active="request()->routeIs('cumpleanios-board')">
                         {{ __('Cumpleaños') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('back_courses') }}" :active="request()->routeIs('back_courses')">
                         {{ __('Cursos') }}
-                    </x-jet-nav-link>
+                    </x-jet-nav-link> --}}
                 </div>
             </div>
 
