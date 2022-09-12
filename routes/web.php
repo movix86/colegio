@@ -16,9 +16,9 @@ use App\Http\Controllers\Auth\GoogleController;
 |
 */
 #Route::get('/', 'HomeController@home')->name('index');
-Route::get('/', 'HomeController@index')->name('log');
+Route::get('/admin', 'HomeController@index')->name('log');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/home', 'HomeController@home')->name('home');
-Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/', 'HomeController@home')->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/{tipo?}/{categoria?}', 'HomeController@dashboard_c')->name('dashboard');
 Route::middleware(['auth:sanctum', 'verified'])->get('/usuarios', 'HomeController@usuarios_c')->name('usuarios');
@@ -28,8 +28,8 @@ Route::prefix('/informacion')->group(function () {
     #ESTAS RUTAS FUNCIONAN CON EL MODELO NEWS
     Route::middleware(['auth:sanctum', 'verified'])->get('/crear/{tipo}', 'ContentController@create_page')->name('create-page');
     Route::middleware(['auth:sanctum', 'verified'])->post('/guardar-noticia', 'ContentController@save_page')->name('save-page');
-    Route::middleware(['auth:sanctum', 'verified'])->get('/actualidad/{categoria?}', 'ContentController@show_pages_news')->name('show-pages-news');
-    Route::middleware(['auth:sanctum', 'verified'])->get('/actualidad/{id}/{noticia_name_id}', 'ContentController@read_page_news')->name('show-page-news');
+    Route::get('/actualidad/{categoria?}', 'ContentController@show_pages_news')->name('show-pages-news');
+    Route::get('/actualidad/{id}/{noticia_name_id}', 'ContentController@read_page_news')->name('show-page-news');
     Route::middleware(['auth:sanctum', 'verified'])->get('/actualizar/{id}', 'ContentController@update_page')->name('edit-page');
     Route::middleware(['auth:sanctum', 'verified'])->post('/guardar-actualizar-noticia', 'ContentController@save_update_page')->name('save-update-page');
     Route::middleware(['auth:sanctum', 'verified'])->get('/eliminar/{id}', 'ContentController@delete_page')->name('delete-page');

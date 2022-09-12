@@ -44,6 +44,7 @@ class HomeController extends Controller
     public function home(){
         $sliders_query = Sliders::orderBy('id', 'desc')->paginate();
         $sliders = [];
+        $news_table_carousel = News::orderBy('id', 'desc')->paginate(4);
 
         #2. Este asigna un slider-predeterminado al HOME:
         $sliders_list = Sliders::all();
@@ -62,48 +63,6 @@ class HomeController extends Controller
             $sliders [] = $obj_sliders;
         }
 
-        #4. Cumpleaños -------------------------------------
-        $diaActual = date('j');
-        $mesActual = date('F');
-        $mesNumero = 0;
-        if ($mesActual=="January") {
-            $mesNumero = 1;
-        } elseif ($mesActual=="February") {
-            $mesNumero = 2;
-        } elseif ($mesActual=="March") {
-            $mesNumero = 3;
-        } elseif ($mesActual=="April") {
-            $mesNumero = 4;
-        } elseif ($mesActual=="May") {
-            $mesNumero = 5;
-        } elseif ($mesActual=="June") {
-            $mesNumero = 6;
-        } elseif ($mesActual=="July") {
-            $mesNumero = 7;
-        } elseif ($mesActual=="August") {
-            $mesNumero = 8;
-        } elseif ($mesActual=="September") {
-            $mesNumero = 9;
-        } elseif ($mesActual=="October") {
-            $mesNumero = 10;
-        } elseif ($mesActual=="November") {
-            $mesNumero = 11;
-        } elseif ($mesActual=="December") {
-            $mesNumero = 12;
-        }
-        $cumpleaneros = DB::table('cumpleanios')
-        ->where('mes', '=', $mesNumero)
-        ->orderBy('mes','asc')
-        ->where('dia', '>=', $diaActual)
-        ->get();
-        $datosCumpleaneros = $cumpleaneros->count();
-
-        if ($datosCumpleaneros<=0) {
-            $cumpleaneros = DB::table('cumpleanios')
-                ->where('mes', '=', $mesNumero)
-                ->paginate(3);
-        }
-
         /*test: ->orderByDesc('mes')*/
         /* Funcionamiento de organización
         $cumpleaneros = \DB::table('cumpleanios')
@@ -113,8 +72,7 @@ class HomeController extends Controller
         */
 
         $date = [
-            'cumpleaneros' => $cumpleaneros,
-            'diaActual' => $diaActual,
+            'news_carusel' => $news_table_carousel,
             'sliders' => $sliders
         ];
         #return view('components.cumpleanios', ['date' => $date]);

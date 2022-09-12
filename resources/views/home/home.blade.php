@@ -12,8 +12,9 @@
         @endcomponent
     @endif
     @if (isset($date))
-        @component('components.b-home-servicios', ['date' => $date])
-            <x-b-home-servicios/>
+        @component('components.news-table-carousel', ['date' => $date['news_carusel']])
+            {{-- <x-b-home-servicios/> --}}
+            <x-news-table-carousel />
         @endcomponent
     @endif
     <x-footer/>
