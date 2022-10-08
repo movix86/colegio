@@ -1,12 +1,12 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start" style="background-color: rgb(10, 60, 147)">
+<footer class="text-center text-lg-start" style="background-color: #561c23">
     <!-- Grid container -->
     <div class="container p-4">
       <!--Grid row-->
         <div class="row">
             <!--Grid column-->
             <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-light text-uppercase">Mi Colegio</h5>
+                <h5 class="text-light text-uppercase">Colegio la Concepcion I.E.D</h5>
 
                 <p class="text-light flex-column-reverse" align="left">
                     Personería Jurídica No xxxx de 1996 – Resolución 780 febrero de 2000.
@@ -66,7 +66,7 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3 text-light" style="background-color: rgb(19, 44, 100)">
+    <div class="text-center p-3 text-light" style="background-color: #250C10">
       © 2020 Copyright:
         <a class="text-info" href="Link">Mi Colegio</a>
     </div>

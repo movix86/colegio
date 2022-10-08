@@ -17,5 +17,8 @@
             <x-news-table-carousel />
         @endcomponent
     @endif
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 jumbotron box-shadow" align="center">
+        <a href="{{url('/informacion/actualidad/')}}" class="btn btn-primary btn-info btn-lg">Ver mas</a>
+    </div>
     <x-footer/>
 @stop

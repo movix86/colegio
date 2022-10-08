@@ -70,7 +70,7 @@ class HomeController extends Controller
                 ->orderByDesc('dia')
         ->paginate(3);
         */
-
+  
         $date = [
             'news_carusel' => $news_table_carousel,
             'sliders' => $sliders
